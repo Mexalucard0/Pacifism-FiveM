@@ -64,6 +64,7 @@ end
 
 
 function setPacifism(bool, msg)
+  if bool == isPacifist then return end
   if bool == true then isPacifist = true
   elseif bool == false then isPacifist = false
   else
