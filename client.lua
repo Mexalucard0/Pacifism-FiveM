@@ -7,8 +7,7 @@ local plyPed
 
 
 RegisterCommand("pacifist", function(src,args)
-  isPacifist = not isPacifist
-  setPacifism(isPacifist)
+  setPacifism(not isPacifist)
 end)
 
 
@@ -78,6 +77,8 @@ function setPacifism(bool, msg)
   end
 end
 
-
-exports('isEnabled', function() return isPacifist end)
+function isEnabled()
+	return isPacifist
+end
+exports('isEnabled', isEnabled)
 exports('set', setPacifism)
